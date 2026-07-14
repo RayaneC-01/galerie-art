@@ -1,0 +1,96 @@
+/* Le cadre de la toile */
+.toile-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Le conteneur qui va masquer le zoom qui dépasse */
+.toile-image-container {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 6 / 7; /* Adapte selon le format de tes toiles */
+}
+
+/* L'image de base */
+.toile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s ease; /* Animation fluide du zoom */
+}
+
+/* Le calque noir transparent qui apparaît au survol */
+.toile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Fond sombre pour faire ressortir le bouton */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Invisible au départ */
+  transition: opacity 0.4s ease; /* Animation fluide du fondu */
+}
+
+/* Le bouton "Voir en détail" affiché au survol */
+.toile-btn-detail {
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 22px;
+  border: 1px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(20px); /* Glisse depuis le bas au départ */
+  transition: transform 0.4s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.toile-btn-detail:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Titre + technique sous l'image (toujours visibles) */
+.toile-infos {
+  padding: 14px 4px 4px;
+}
+
+.toile-titre-bas {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #000;
+}
+
+.toile-technique {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #6b7280; /* gris doux, cohérent avec le reste du site */
+  margin-top: 2px;
+}
+
+/* --- LES ANIMATIONS AU SURVOL (HOVER) --- */
+
+/* 1. Zoom de l'image */
+.toile-card:hover .toile-image {
+  transform: scale(1.08); /* Agrandit l'image de 8% */
+}
+
+/* 2. Apparition du fond sombre */
+.toile-card:hover .toile-overlay {
+  opacity: 1;
+}
+
+/* 3. Le bouton remonte légèrement */
+.toile-card:hover .toile-btn-detail {
+  transform: translateY(0);
+}
