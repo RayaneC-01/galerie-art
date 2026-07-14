@@ -120,7 +120,7 @@ export default function Accueil() {
       <section id="galerie" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="mb-16 border-l-4 border-black pl-6">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-black">
-            Toutes Mes Œuvres ouii !
+            Toutes Mes Œuvres ouiii !
           </h2>
           <p className="text-gray-500 uppercase tracking-widest text-lg mt-2">
             Exploration de la forme et de la déconstruction
