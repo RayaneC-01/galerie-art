@@ -30,11 +30,11 @@ export default function BtnTop() {
         onClick={scrollToTop}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`fixed bottom-6 right-6 p-3 rounded-full shadow-lg transition-opacity duration-300 ${
+        className={`fixed bottom-10 right-10 p-3 rounded-full shadow-lg transition-opacity duration-300 ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         } ${isHovered ? "bg-gray-800 text-white" : "bg-gray-600 text-white"}`}
       >
-        <FaArrowUp size={20} />
+        <FaArrowUp size={30} />
       </button>
   );
 }
