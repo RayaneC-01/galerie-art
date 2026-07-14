@@ -8,7 +8,8 @@ import Footer from "./components/footer.jsx";
 
 function App() {
   return (
-    <Router>
+    // On indique ici à React Router que notre site commence par /galerie-art
+    <Router basename="/galerie-art">
       <Navbar />
       <Routes>
         <Route path="/" element={<Accueil />} />
@@ -19,6 +20,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
