@@ -5,7 +5,8 @@ import { fadeInUp, buttonHover } from "../utils/animations";
 import Toile from "../components/Toile";
 import "../App.css";
 import ArtworkModal from "./ArtworkModal"; // Modal Voir en détail
-
+// importer btn To top 
+import BtnTop from "../components/btnTop.jsx";
 const AnimatedDiv = motion.create("div");
 const ScrollLink = motion.create("a");
 
@@ -37,33 +38,31 @@ export default function Accueil() {
   const TOILES = [
     {
       id: 1,
-      src: "/img/Loulou_Doux_Reflet.jpeg",
+      src: `${import.meta.env.BASE_URL}img/Loulou_Doux_Reflet.jpeg`,
       titre: "Le Chat aux Doux Reflets",
       technique: "Acrylique",
     },
     {
       id: 2,
-      src: "/img/Diva_Pure.jpeg",
+      src: `${import.meta.env.BASE_URL}img/Diva_Pure.jpeg`,
       titre: "Diva Pure",
       technique: "Acrylique",
     },
     {
       id: 3,
-      src: "/img/IMG_4153.jpeg",
+      src: `${import.meta.env.BASE_URL}img/IMG_4153.jpeg`,
       titre: "Le Jeune Homme et la Lumière",
       technique: "Acrylique",
     },
-
     {
       id: 4,
-      src: "/img/Dame_pensees_colorees.jpeg",
+      src: `${import.meta.env.BASE_URL}img/Dame_pensees_colorees.jpeg`,
       titre: "La Dame aux Pensées Colorées",
       technique: "Acrylique",
     },
-
     {
       id: 5,
-      src: "/img/Dame_aux_Nuances.jpeg",
+      src: `${import.meta.env.BASE_URL}img/Dame_aux_Nuances.jpeg`,
       titre: "Dame aux Nuances",
       technique: "Acrylique",
     },
@@ -76,12 +75,11 @@ export default function Accueil() {
 
     {
       id: 7,
-      src: "/img/Solitude_Cowboy.jpg",
+      src: `${import.meta.env.BASE_URL}img/Solitude_Cowboy.jpg`,
       titre: "Solutide Cowboy",
       technique: "Acrylique",
-    }
+    },
   ];
-
 
   return (
     <div className="w-full bg-[#fbf9f4]">
@@ -130,7 +128,6 @@ export default function Accueil() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          
           {/* --- TOILES --- */}
           {TOILES.map((toile) => (
             <motion.div
@@ -146,7 +143,7 @@ export default function Accueil() {
                 titre={toile.titre}
                 technique={toile.technique}
                 onVoirDetail={() => setSelectedToile(toile)}
-              />
+                />
             </motion.div>
           ))}
         </div>
@@ -157,6 +154,8 @@ export default function Accueil() {
         toile={selectedToile}
         onClose={() => setSelectedToile(null)}
       />
+      {/* --- BOUTON REVENIR EN HAUT DE PAGE --- */}
+      <BtnTop />
     </div>
   );
 }
