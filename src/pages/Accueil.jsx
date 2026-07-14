@@ -123,7 +123,7 @@ export default function Accueil() {
             Toutes Mes Œuvres
           </h2>
           <p className="text-gray-500 uppercase tracking-widest text-lg mt-2">
-            Exploration de la forme et de la déconstruction ! ! 
+            Exploration de la forme et de la déconstruction 
           </p>
         </div>
 
